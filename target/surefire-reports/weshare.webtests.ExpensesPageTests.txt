@@ -1,0 +1,30 @@
+-------------------------------------------------------------------------------
+Test set: weshare.webtests.ExpensesPageTests
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 22.763 s <<< FAILURE! - in weshare.webtests.ExpensesPageTests
+weshare.webtests.ExpensesPageTests.expensePaidInFull  Time elapsed: 1.237 s  <<< ERROR!
+org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"css selector","selector":"#no_expenses"}
+  (Session info: chrome=130.0.6723.58)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-47-generic', java.version: '17.0.12'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [2cd12192bf3d8e876ffe9794b49b4289, findElement {using=id, value=no_expenses}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 130.0.6723.58, chrome: {chromedriverVersion: 130.0.6723.69 (3ec172b971b9..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:36909}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:36909/devtoo..., se:cdpVersion: 130.0.6723.58, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 2cd12192bf3d8e876ffe9794b49b4289
+	at weshare.webtests.ExpensesPageTests.expensePaidInFull(ExpensesPageTests.java:77)
+
+weshare.webtests.ExpensesPageTests.haveExpenses  Time elapsed: 1.076 s  <<< ERROR!
+org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"css selector","selector":"#payment_request_ca981c7f\-b217\-4bd2\-8fcf\-c07e270aef1d"}
+  (Session info: chrome=130.0.6723.58)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-47-generic', java.version: '17.0.12'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [21ca62dc2b319e65c456a2e705ed18e3, findElement {using=id, value=payment_request_ca981c7f-b217-4bd2-8fcf-c07e270aef1d}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 130.0.6723.58, chrome: {chromedriverVersion: 130.0.6723.69 (3ec172b971b9..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:46049}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:46049/devtoo..., se:cdpVersion: 130.0.6723.58, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 21ca62dc2b319e65c456a2e705ed18e3
+	at weshare.webtests.ExpensesPageTests.haveExpenses(ExpensesPageTests.java:64)
+

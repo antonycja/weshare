@@ -44,7 +44,8 @@ public abstract class WebTestRunner {
     {
         try {
             screenshotDirectory = Paths.get("target", "screenshots");
-            if (!Files.exists(screenshotDirectory)) Files.createDirectory(screenshotDirectory);
+            if (!Files.exists(screenshotDirectory))
+                Files.createDirectory(screenshotDirectory);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -76,6 +77,7 @@ public abstract class WebTestRunner {
         options.addArguments("--disable-gpu");
         options.addArguments("--start-maximized");
         options.addArguments("--start-fullscreen");
+        options.addArguments("--remote-allow-origins=*");
         driver = new ChromeDriver(options);
         aShot = new AShot().shootingStrategy(ShootingStrategies.viewportPasting(500));
     }
@@ -163,8 +165,8 @@ public abstract class WebTestRunner {
                 .filter(e -> e.getClassName().equals(getClass().getCanonicalName()))
                 .findFirst().map(StackTraceElement::getMethodName).orElseThrow();
         Path testDirectory = Paths.get(screenshotDirectory.toFile().getPath(), currentTest);
-        if (!Files.exists(testDirectory)) Files.createDirectory(testDirectory);
+        if (!Files.exists(testDirectory))
+            Files.createDirectory(testDirectory);
         return testDirectory;
     }
 }
-

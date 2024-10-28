@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: weshare.webtests.LoginAndLogoutTests
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 3, Time elapsed: 11.112 s - in weshare.webtests.LoginAndLogoutTests
