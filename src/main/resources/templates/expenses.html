@@ -10,17 +10,21 @@
       <section class="expenseList">
         <h2>My Expenses</h2>
 
-        <a href="/newexpense">Add a new expense</a>
+        <a
+          href="/newexpense"
+          id="add_expense"
+          >Add a new expense</a
+        >
         <p
           id="no_expenses"
-          th:if="${#lists.isEmpty(expenses)}"
+          th:if=" not ${grandTotal}"
         >
           You don't have any expenses!
         </p>
 
         <div
           id="expenses"
-          th:unless="${#lists.isEmpty(expenses)}"
+          th:unless="not ${grandTotal}"
         >
           <table>
             <thead>
@@ -40,8 +44,9 @@
                   th:id="'date_' + ${expense.id}"
                   th:text="${expense.date}"
                 ></td>
-                <td th:id="'description_' + ${expense.id}">
+                <td>
                   <a
+                    th:id="'payment_request_' + ${expense.id}"
                     th:href="@{paymentrequest(expenseId=${expense.id}) }"
                     th:text="${expense.description}"
                   >
@@ -75,16 +80,6 @@
               </tr>
             </tfoot>
           </table>
-          <!-- <div
-            style="
-              display: flex;
-              justify-content: space-between;
-              width: inherit;
-            "
-          >
-            <h2>Total Expenses</h2>
-            <h2>ZAR total</h2>
-          </div> -->
         </div>
       </section>
     </div>

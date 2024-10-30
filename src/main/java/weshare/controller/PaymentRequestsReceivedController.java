@@ -57,9 +57,11 @@ public class PaymentRequestsReceivedController {
                 .filter(request -> request.getId().equals(id))
                 .findFirst()
                 .orElseThrow(() -> new IllegalArgumentException("PaymentRequest with ID " + id + " not found."));
-
         Payment payment = paymentRequest.pay(personLoggedIn, LocalDate.now());
-
+        Expense expense = new Expense(personLoggedIn, payment.getExpenseForPersonPaying().getDescription(),
+                payment.getAmountPaid(),
+                payment.getPaymentDate());
+        expensesDAO.save(expense);
         context.redirect(Routes.PAYMENT_REQUESTS_RECEIVED);
     };
 }

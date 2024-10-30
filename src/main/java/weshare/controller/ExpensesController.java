@@ -39,8 +39,11 @@ public class ExpensesController {
         }
 
         Map<String, Object> viewModel = new HashMap<>();
-        viewModel.put("expenses", expenses);
-        viewModel.put("grandTotal", grandAmount);
+        if (grandAmount.isGreaterThan(ZERO_RANDS)) {
+            viewModel.put("expenses", expenses);
+            viewModel.put("grandTotal", grandAmount);
+        }
+
         context.render("expenses.html", viewModel);
     };
 

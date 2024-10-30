@@ -57,9 +57,7 @@ public class PaymentRequestController {
                 .check(Objects::nonNull, "Amount is required")
                 .get();
 
-        LocalDate date = context.formParamAsClass("due_date", LocalDate.class)
-                .check(Objects::nonNull, "Date is required")
-                .get();
+        LocalDate date = LocalDate.parse(context.formParam("due_date"));
 
         String idString = context.formParam("expense_id");
 

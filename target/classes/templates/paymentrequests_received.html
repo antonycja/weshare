@@ -53,13 +53,7 @@
                     action="/payment.action"
                     enctype="application/x-www-form-urlencoded"
                   >
-                    <input
-                      th:if="${prr.isPaid}"
-                      type="checkbox"
-                      checked
-                      name="check"
-                      id="submit"
-                    />
+                    <label th:if="${prr.isPaid}" id="paid_1"> &#9989</label>
                     <input
                       th:unless="${prr.isPaid}"
                       id="submit"
@@ -79,7 +73,7 @@
             <tfoot>
               <tr>
                 <td colspan="3">Total Unpaid</td>
-                <td th:text="${grandTotal}"></td>
+                <td id="grand_total" th:text="${grandTotal}"></td>
               </tr>
             </tfoot>
           </table>

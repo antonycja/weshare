@@ -11,7 +11,7 @@
         <h2>People that owe me</h2>
         <p
           id="no_payment_requests_sent"
-          th:if="${#lists.isEmpty(paymentRequests)}"
+          th:if="${#lists.isEmpty(payments)}"
         >
           Nobody owes you anything!
         </p>
@@ -51,7 +51,10 @@
             <tfoot>
               <tr>
                 <td colspan="3">Total Unpaid</td>
-                <td th:text="${grandTotal}"></td>
+                <td
+                  id="grand_total"
+                  th:text="${grandTotal}"
+                ></td>
               </tr>
             </tfoot>
           </table>
