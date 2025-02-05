@@ -58,9 +58,9 @@ USER appuser
 EXPOSE 5050
 
 # Add debugging to see if the jar exists and its contents
-# RUN ls -la /app && \
-#     java -jar app.jar 
+RUN ls -la /app && \
+    java -jar app.jar --version || true
 
 # Run application with debug output
-# ENV JAVA_OPTS="-Dlogging.level.root=DEBUG"
-ENTRYPOINT java -jar app.jar
+ENV JAVA_OPTS="-Dlogging.level.root=DEBUG"
+ENTRYPOINT java $JAVA_OPTS -jar app.jar
